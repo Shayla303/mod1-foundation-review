@@ -101,11 +101,11 @@ describe('iterator', function() {
     assert.deepEqual(factory.dataTypes(['potato', 1, true, 'lasagna', 444, null]), ["string", "number", "boolean", "string", "number", "object"]);
   });
 
-  // it.skip('can FILTER out strings shorter or equal to 4 letters', function() {
-  //   var factory = new Iterator();
-  //
-  //   assert.equal(factory.longWords(['potato', 'bird', 'ham', 'lasagna', 'pants', 'bro', 'consternation']), ['bird', 'ham', 'bro']);
-  // });
+  it.skip('can FILTER out strings shorter or equal to 4 letters', function() {
+    var factory = new Iterator();
+
+    assert.equal(factory.longWords(['potato', 'bird', 'ham', 'lasagna', 'pants', 'bro', 'consternation']), ['bird', 'ham', 'bro']);
+  });
 
   it.skip('can FILTER for meals that contain basil', function() {
     var factory = new Iterator();
@@ -123,8 +123,6 @@ describe('iterator', function() {
       { name: 'Lasagna', vegetarian: true, ingredients: ['tomatoes', 'basil', 'cheese'] },
       { name: 'Pizza', vegetarian: true, ingredients: ['basil', 'tomatoes', 'cheese'] }
     ]
-
-
 
     assert.deepEqual(factory.getFood(meals, search), expected)
   });
