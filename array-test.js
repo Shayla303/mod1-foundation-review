@@ -3,17 +3,17 @@ var Iterator = require('./arrays');
 
 describe('iterator', function() {
 
-  // it.skip('can be instantiated', function() {
-  //   var factory = new Iterator();
-  //
-  //   assert.equal(typeof factory, Iterator);
-  // });
-  //
-  // it.skip('has a prototype function called uppercase', function() {
-  //   var factory = new Iterator();
-  //
-  //   assert.equal(typeof factory.createArray, 'function');
-  // });
+  it('can be instantiated', function() {
+    var factory = new Iterator();
+
+    assert.equal(typeof factory, 'object');
+  });
+
+  it('has a prototype function called uppercase', function() {
+    var factory = new Iterator();
+
+    assert.equal(typeof factory.uppercase, 'function');
+  });
 
   it('using FOR EACH can create a string from an array of strings', function() {
     var factory = new Iterator();
@@ -31,7 +31,7 @@ describe('iterator', function() {
     assert.equal(factory.yell(["hey, ", "what's, ", "up"]), "HEY! WHAT'S! UP!");
   });
 
-  it.skip('using FOR EACH can reverse an array and create a string', function() {
+  it('using FOR EACH can reverse an array and create a string', function() {
     var factory = new Iterator();
 
     assert.equal(factory.reverseAndString([1, 2, 3, 4, 5]), '5 4 3 2 1');

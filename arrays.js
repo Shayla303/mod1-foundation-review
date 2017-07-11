@@ -1,8 +1,21 @@
-function Iterator(input) {
+function Iterator(input) {}
 
+Iterator.prototype.uppercase = function() {}
+
+Iterator.prototype.reverseAndString = function(arr) {
+  var answer = '';
+  var reversedArray = arr.reverse();
+  reversedArray.forEach(function (char, i){
+    if (i === arr.length - 1) {
+      answer += char
+    } else {
+      answer += char + ' ';
+    }
+  })
+  return answer;
 }
+
 Iterator.prototype.createArray = function(arr) {
-  // input.toString()
 
   if (typeof arr[0] === 'number' ) {
     var total = 0
